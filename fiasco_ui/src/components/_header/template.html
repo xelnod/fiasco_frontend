@@ -1,0 +1,8 @@
+<div class="hello">
+<!--  <img class='main-logo' src="https://images.ru.prom.st/323455245_w0_h0_3.jpg">-->
+  <h1>Привет, {{ currentUser.username }}!</h1>
+
+  <button v-if="isLoggedIn" @click="logout">
+      Выйти
+  </button>
+</div>
