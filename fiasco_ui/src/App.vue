@@ -1,10 +1,13 @@
 <template>
   <div id="app">
-    <div id="nav">
+    Привет, {{ currentUser.username }}!
+
+      <button v-if="isLoggedIn" @click="logout">
+        Выйти
+      </button> |
       <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link> |
-      <router-link to="/login">Войти</router-link>
-    </div>
+      <router-link to="/about">About</router-link>
+      <span v-if="!isLoggedIn"> | <router-link to="/login">Войти</router-link></span>
     <router-view/>
   </div>
 </template>
@@ -32,3 +35,21 @@
   }
 }
 </style>
+
+<script>
+import { mapState } from 'vuex';
+
+export default {
+  computed: {
+    ...mapState({
+      currentUser: state => state.currentUser,
+      isLoggedIn: state => state.isLoggedIn,
+    }),
+  },
+  methods: {
+    logout() {
+      this.$store.dispatch('logout');
+    },
+  },
+};
+</script>
