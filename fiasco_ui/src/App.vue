@@ -6,7 +6,7 @@
         Выйти
       </button> |
       <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
+      <router-link to="/ops">About</router-link>
       <span v-if="!isLoggedIn"> | <router-link to="/login">Войти</router-link></span>
     <router-view/>
   </div>
@@ -38,7 +38,7 @@
 
 <script>
 import { mapState } from 'vuex';
-
+import fiascoForm from '@/components/__fiasco-form'
 export default {
   computed: {
     ...mapState({

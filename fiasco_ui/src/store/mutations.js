@@ -7,8 +7,8 @@ export const REGISTER_SUCCESS = 'REGISTER_SUCCESS';
 export const REGISTER_FAILED = 'REGISTER_FAILED';
 export const SET_CURRENT_USER = 'SET_CURRENT_USER';
 export const AnonymousStub = {
-  username: 'stranger',
-  preferred_class: 'swordman',
+  username: 'кто бы ты ни был',
+  income: 20000,
 };
 
 export default {
